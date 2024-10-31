@@ -1,23 +1,20 @@
-//server.js
+// server.js
 
 const express = require('express');
+const bodyParser = require('body-parser');
+const itemRoutes = require('./routes/items');
+const eh = require('./middleware/errorMiddleware');
+
 const app = express();
+const port = 8000;
 
-// handling CORS
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", 
-               "http://localhost:4200");
-    res.header("Access-Control-Allow-Headers", 
-               "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+app.use(bodyParser.json());
+app.use('/items', itemRoutes); // Use the item routes
+
+app.use(eh);
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
 
-// route for handling requests from the Angular client
-app.get('/api/message', (req, res) => {
-    res.json({ message: 
-            'Hello Folks from the Express server!' });
-});
-
-app.listen(8000, () => {
-    console.log('Server listening on port 8000');
-});
+module.exports = app; // Export the app for testing
