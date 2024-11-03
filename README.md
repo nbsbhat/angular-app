@@ -26,3 +26,18 @@ docker kill <process-name>
 docker compose run server npm run test
 // run tests when building
 docker build -t node-api-server-test --progress=plain --no-cache --target test .
+
+
+// build the docker image
+docker build -t nbhat74/node-app .
+// publish to hub
+docker push nbhat74/node-app
+
+// run the docker container
+docker run --name nodeapp -p 8000:8000 -d nbhat74/node-app
+// stop the container
+docker stop <id>
+// remove (all) stopped containers
+docker system prune -a
+// pull docker containers
+docker pull nbhat74/<app>

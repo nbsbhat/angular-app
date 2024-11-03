@@ -3,8 +3,8 @@ FROM node:18 AS base
 
 RUN mkdir -p /home/ec2-user/nodeapp
 # RUN chown -R ec2-user:ec2-user /home/ec2-user/nodeapp
-WORKDIR /home/ec2-user/nodeapp
 # USER ec2-user
+WORKDIR /home/ec2-user/nodeapp
 COPY package*.json ./
 RUN npm install --only=production
 COPY . .
