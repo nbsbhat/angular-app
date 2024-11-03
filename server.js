@@ -20,7 +20,7 @@ app.use('/', route); // Use the default routes
 // app.use(eh);
 
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at 0.0.0.0:${port}`);
 });
 
 module.exports = app; // Export the app for testing
