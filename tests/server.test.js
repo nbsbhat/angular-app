@@ -4,6 +4,14 @@ const request = require('supertest');
 const app = require('../server'); // Import the app
 
 describe('CRUD API Tests', () => {
+
+    it('should hit root', async () => {
+        const res = await request(app).get('/');
+        
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.message).toBe('welcome to this service');
+    });
+
     it('should create a new item', async () => {
         const res = await request(app)
             .post('/items')

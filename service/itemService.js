@@ -17,7 +17,14 @@ itemService.createItem = (req, res) => {
 };
 
 // Read (GET)
+itemService.get = (req, res) => {
+    res.status(200).json({'message': 'welcome to this service'});
+}
+
 itemService.getAllItems = (req, res) => {
+    if(items.length == 0)
+        res.json({'message': 'there are no items this time!'});
+
     res.json(items);
 };
 

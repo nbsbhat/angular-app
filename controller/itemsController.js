@@ -22,6 +22,11 @@ itemController.getAllItems = (req, res) => {
     return itemService.getAllItems(req, res);
 };
 
+// get
+itemController.get = (req, res) => {
+    return itemService.get(req, res);
+};
+
 // Update (PUT)
 itemController.updateItem = (req, res) => {
     return itemService.updateItem(req, res);

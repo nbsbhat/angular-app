@@ -13,7 +13,16 @@ git push -u origin main
 mkdir node-app
 cd node-app
 npm init -y
-# npm install @angular/cli@14
-# npm new client
+// npm install @angular/cli@14
+// npm new client
 
 
+docker build -t nbhat74/node-api-server:latest
+docker run -p 8000:8000 -d nbhat74/node-api-server:latest
+docker ps
+docker kill <process-name>
+
+// build and run tests while developing locally (leaving the image)
+docker compose run server npm run test
+// run tests when building
+docker build -t node-api-server-test --progress=plain --no-cache --target test .

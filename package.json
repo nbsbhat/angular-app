@@ -1,24 +1,25 @@
 {
-  "name": "angular-app",
+  "name": "node-app",
   "version": "1.0.0",
-  "description": "\"# angular-app\"",
+  "description": "\"# node-app\"",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nbsbhat/angular-app.git"
+    "url": "git+https://github.com/nbsbhat/node-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nbsbhat/angular-app/issues"
+    "url": "https://github.com/nbsbhat/node-app/issues"
   },
-  "homepage": "https://github.com/nbsbhat/angular-app#readme",
+  "homepage": "https://github.com/nbsbhat/node-app#readme",
   "dependencies": {
-    "@angular/cli": "^14.2.13",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
