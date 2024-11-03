@@ -35,6 +35,9 @@ docker push nbhat74/node-app
 
 // run the docker container
 docker run --name nodeapp -p 8000:8000 -d nbhat74/node-app
+// run with a env variable passed
+docker run -e NODE_ENV='production' --name nodeapp -p 8000:8000 -d nbhat74/node-app
+
 // stop the container
 docker stop <id>
 // remove (all) stopped containers

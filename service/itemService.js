@@ -23,7 +23,7 @@ itemService.get = (req, res) => {
 
 itemService.getAllItems = (req, res) => {
     if(items.length == 0)
-        res.json({'message': 'there are no items this time!'});
+        res.json({'message': `there are no items this time! env:${process.env.NODE_ENV}`});
 
     res.json(items);
 };
