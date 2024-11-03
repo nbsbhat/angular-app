@@ -12,6 +12,7 @@ EXPOSE 8000
 
 
 FROM base as dev
+ENV NODE_ENV development
 # USER ec2-user
 # RUN npm install
 # COPY . .
@@ -19,6 +20,7 @@ CMD ["npm", "run", "dev"]
 
 
 FROM base as prod
+ENV NODE_ENV production
 CMD ["node", "server.js"]
 
 
